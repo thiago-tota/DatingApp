@@ -1,0 +1,7 @@
+﻿Reference:	https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell
+			https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs
+
+Add-Migration MessageExchange_Initial -Context DataContext -Project SwiftEvo.Feature.MessageExchange -OutputDir ../SwiftEvo.Feature.MessageExchange/Migrations
+Script-Migration -From MessageExchange_Initial
+Update-Database -Migration MessageExchange_1
+Remove-Migration -Context DataContext -Project SwiftEvo.Feature.MessageExchange
